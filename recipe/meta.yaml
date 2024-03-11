@@ -1,5 +1,5 @@
 {% set name = "cappa" %}
-{% set version = "0.17.1" %}
+{% set version = "0.17.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cappa-{{ version }}.tar.gz
-  sha256: 94156a65a7e7db9f85f11fa197784664ccd0338970a59d444f7f8c16891eb7cc
+  sha256: 74ad8cb14a4eeee8e5bfa1a706d84da8b1f16c1aaf8a9ff34410a595281b0df2
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.8,<4.0
-    - typing-extensions >=4.7.1
+    - typing-extensions >=4.8.0
     - typing_inspect >=0.9.0
     - rich
   run_constrained:
