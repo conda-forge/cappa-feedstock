@@ -21,8 +21,8 @@ requirements:
     - pip
   run:
     - python >=3.8,<4.0
-    - typing-extensions >=4.8.0
-    - typing_inspect >=0.9.0
+    - typing_extensions >=4.8.0
+    - type-lens >=0.2.3
     - rich
   run_constrained:
     - docstring-parser >=0.15
