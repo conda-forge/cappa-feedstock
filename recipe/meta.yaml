@@ -1,5 +1,5 @@
 {% set name = "cappa" %}
-{% set version = "0.24.0" %}
+{% set version = "0.24.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cappa-{{ version }}.tar.gz
-  sha256: 2da82325f7e32ec0a46703aa61ef607d7dbbe0e3e53e344a2da0cd0c6f17347b
+  sha256: 3c2ee69cf0d74447fa18aa9c2cc4de10fe40211d2f9a63b484269e44f45b9639
 
 build:
   noarch: python
