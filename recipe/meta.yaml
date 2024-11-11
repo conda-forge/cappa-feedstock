@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cappa-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cappa-{{ version }}.tar.gz
   sha256: 3c2ee69cf0d74447fa18aa9c2cc4de10fe40211d2f9a63b484269e44f45b9639
 
 build:
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }}
     - typing_extensions >=4.8.0
     - type-lens >=0.2.3
     - rich
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dancardin/cappa
