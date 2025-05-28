@@ -23,9 +23,7 @@ requirements:
     - python >={{ python_min }}
     - typing_extensions >=4.8.0
     - type-lens >=0.2.3
-    - rich
-  run_constrained:
-    - docstring-parser >=0.15
+    - rich >=10.2.0
 
 test:
   imports:
