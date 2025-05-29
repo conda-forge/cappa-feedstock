@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  name: cappa
+  version: 0.27.3
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cappa-${{ version }}.tar.gz
+  sha256: 644933742cc6e122acbf7f68edc9317694a5abe466203f72d8681a58228879e1
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - typing_extensions >=4.8.0
+    - type-lens >=0.2.3
+    - rich >=10.2.0
+
+tests:
+  - python:
+      imports:
+        - cappa
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Declarative CLI argument parser.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/dancardin/cappa
+
+extra:
+  recipe-maintainers:
+    - thewchan
