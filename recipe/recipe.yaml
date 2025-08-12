@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: cappa
-  version: "0.29.1"
+  version: "0.30.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cappa-${{ version }}.tar.gz
-  sha256: 2f6e1cf53619e99d8b2ae431ed7ac5b81e7728f1aa42c3fc86d7bfb1f03de347
+  sha256: 083b02ce0866fc4ee892e4e5a8b4ac3a02a435aef824ebc7041589d037e6aa7e
 
 build:
   number: 0
