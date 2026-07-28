@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: cappa
-  version: "0.32.1"
+  version: "0.32.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cappa-${{ version }}.tar.gz
-  sha256: fc8c9cb98ee042580224f4d9f1bf05482d452c40b1c8f5aa7fb9c980870899f2
+  sha256: 933b411a186d41c5b2f983e6b06a36de8b19078dd6b66732e7895893908952c2
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - typing_extensions >=4.8.0
+    - typing_extensions >=4.12.0
     - type-lens >=0.2.5
     - rich >=12.1.0
 
@@ -33,7 +33,9 @@ tests:
       imports:
         - cappa
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Declarative CLI argument parser.
